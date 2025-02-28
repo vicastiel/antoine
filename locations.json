@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "latitude": 48.8566,
+        "longitude": 2.3522,
+        "description": "Street Art \u00e0 Ch\u00e2telet"
+    },
+    {
+        "id": 2,
+        "latitude": 48.8606,
+        "longitude": 2.3376,
+        "description": "Fresque murale pr\u00e8s du Louvre"
+    },
+    {
+        "id": 3,
+        "latitude": 48.853,
+        "longitude": 2.3499,
+        "description": "Installation moderne \u00e0 Notre-Dame"
+    },
+    {
+        "id": 4,
+        "latitude": 48.875,
+        "longitude": 2.295,
+        "description": "Sculpture sur l\u2019Avenue Montaigne"
+    },
+    {
+        "id": 5,
+        "latitude": 48.8656,
+        "longitude": 2.3216,
+        "description": "Peinture murale \u00e0 Saint-Honor\u00e9"
+    }
+]

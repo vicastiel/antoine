@@ -1,9 +1,10 @@
 import json
-from flask import Flask, jsonify, request
+import os
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app)  # Autorise les requêtes depuis le frontend
+app = Flask(__name__, template_folder="templates")  # Assure que Flask trouve map.html
+CORS(app)  # Autorise les requêtes CORS
 
 # Fichier pour stocker les emplacements
 DATA_FILE = "locations.json"
@@ -26,7 +27,12 @@ locations = load_locations()
 
 @app.route('/')
 def home():
-    return "Bienvenue sur l'API ArtMap ! Essayez /locations pour voir les emplacements."
+    return "Bienvenue sur l'API ArtMap ! Essayez /map pour voir la carte."
+
+@app.route('/map')
+def show_map():
+    """Affiche la carte interactive."""
+    return render_template("map.html")
 
 @app.route('/locations', methods=['GET'])
 def get_locations():
@@ -48,5 +54,5 @@ def add_location():
     return jsonify(new_location), 201
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=10000, debug=True)
-
+    port = int(os.environ.get("PORT", 5000))  # Récupère le port donné par Render
+    app.run(host="0.0.0.0", port=port, debug=True)

@@ -1,7 +1,7 @@
 import requests
 
-# URL de ton API Flask
-url = "http://127.0.0.1:5000/locations"
+# URL de l'API Flask en ligne
+url = "https://antoine.onrender.com/locations"
 
 # Liste des œuvres fictives avec leurs coordonnées GPS et descriptions
 locations = [
